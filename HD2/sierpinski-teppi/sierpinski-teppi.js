@@ -55,37 +55,6 @@ window.onload = function init()
     render();
 };
 
-function triangle( a, b, c )
-{
-    points.push( a, b, c );
-}
-
-function divideTriangle( a, b, c, count )
-{
-
-    // check for end of recursion
-
-    if ( count === 0 ) {
-        triangle( a, b, c );
-    }
-    else {
-
-        //bisect the sides
-
-        var ab = mix( a, b, 0.5 );
-        var ac = mix( a, c, 0.5 );
-        var bc = mix( b, c, 0.5 );
-
-        --count;
-
-        // three new triangles
-
-        divideTriangle( a, ab, ac, count );
-        divideTriangle( c, ac, bc, count );
-        divideTriangle( b, bc, ab, count );
-    }
-}
-
 
 function divideSquare( a, b, c, d, recursion_count ) {
     if ( recursion_count === 0 ) {
@@ -128,11 +97,6 @@ function divideSquare( a, b, c, d, recursion_count ) {
     divideSquare( D, C, ccd, cdd, recursion_count )
     divideSquare( dda, D, cdd, d, recursion_count )
     divideSquare( daa, A, D, dda, recursion_count )
-
-
-
-
-
 }
 
 
